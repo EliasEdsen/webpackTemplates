@@ -1,6 +1,6 @@
 {
   "name": "WebpackTemplates",
-  "description": "Jade + Stylus + Coffee + jQuery + Bootstrap4",
+  "description": "Jade + Stylus + Coffee files. And Bootstrap (v4) framework.",
   "version": "1.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --inline",
