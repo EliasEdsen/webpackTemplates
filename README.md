@@ -1,4 +1,4 @@
-# Webpack Easy Template
+# Webpack Template
 
 Шаблон для сборки Jade + Stylus + Coffee файлов. С jQuery + Bootstrap v4 плагинами.
 
