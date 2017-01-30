@@ -1,6 +1,6 @@
-# Webpack Template
+# Webpack Easy Template
 
-Шаблон для сборки Jade + Stylus + Coffee файлов.
+Шаблон для сборки Jade + Stylus + Coffee файлов. С jQuery + Bootstrap v4 плагинами.
 
 В консоле запустить:
 - npm run dev - соберет версию для разработчика и запустит на localhost
