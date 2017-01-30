@@ -1,4 +1,4 @@
-# Webpack Template
+# Webpack Templates
 
 Шаблоны для сборки Jade + Stylus + Coffee файлов с различными фреймворками и библиотеками.
 
