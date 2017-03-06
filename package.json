@@ -3,6 +3,7 @@
   "description": "Jade + Stylus + Coffee",
   "version": "1.0.0",
   "scripts": {
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --open --inline",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --inline",
     "test": "cross-env NODE_ENV=test webpack --progress --hide-modules",
     "prod": "cross-env NODE_ENV=prod webpack --progress --hide-modules"
