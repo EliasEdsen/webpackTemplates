@@ -2,6 +2,7 @@
   "name": "WebpackTemplates",
   "description": "Jade + Stylus + Coffee",
   "version": "1.0.0",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --open --inline",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --inline",
