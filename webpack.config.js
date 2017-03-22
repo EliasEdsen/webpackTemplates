@@ -28,6 +28,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        exclude: /node_modules/,
+        options: {
+          loaders: {
+            'stylus': ExtractTextPlugin.extract({
+              fallbackLoader: 'vue-style-loader',
+              loader: 'css-loader!autoprefixer-loader?browsers=last 50 versions!stylus-loader?resolve url'
+            })
+          }
+        },
+        exclude: /\/node_modules\//
+      },
+      {
         test: /\.jade$/,
         loader: 'jade-loader?pretty=true',
         exclude: [
