@@ -1,6 +1,6 @@
 {
   "name": "WebpackTemplates",
-  "description": "Jade + Stylus + Coffee files. And Bootstrap (v4) framework.",
+  "description": "Jade + Stylus + Coffee files. And Bootstrap (v4) library.",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {

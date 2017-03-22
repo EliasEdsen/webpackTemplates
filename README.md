@@ -1,6 +1,6 @@
 # Webpack Template
 
-Шаблон для сборки Jade + Stylus + Coffee файлов. И Bootstrap (v4) фреймворка.
+Шаблон для сборки Jade + Stylus + Coffee файлов. И Bootstrap (v4) библиотеки.
 
 В консоле запустить:
 - `npm start` либо `npm run dev` - соберет версию для разработчика и запустит на localhost
