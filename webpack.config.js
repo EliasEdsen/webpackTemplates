@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var rimraf = require('rimraf');
 
-var _publicPath = process.env.NODE_ENV === 'dev'? '/' : './';
+var _publicPath = process.env.NODE_ENV === 'dev' ? '/' : './';
 
 function addHash(template, hash) {
   return template.replace(/\.[^.]+$/, `.[${hash}]$&`)
@@ -115,7 +115,21 @@ module.exports = {
   ]
 }
 
-if (process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'deployLocalTest' || process.env.NODE_ENV === 'deployLocalProd') {
+  var localPath = 'C:/OpenServer/domains/case/';
+
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    {
+      apply: function function_name(compiler) {
+        rimraf.sync(localPath);
+      }
+    }
+  ])
+
+  module.exports.output.path = path.resolve(localPath)
+}
+
+if (process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'deployLocalTest') {
   module.exports.devtool = 'eval-source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -128,7 +142,7 @@ if (process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'test') {
       favicon: './assets/images/favicon.ico',
       minify: false,
       cache: true,
-      template: './index.jade',
+      template: './index_test.jade',
       xhtml: true
     }),
     new ExtractTextPlugin({
@@ -138,7 +152,7 @@ if (process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'test') {
   ])
 }
 
-if (process.env.NODE_ENV === 'prod') {
+if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'deployLocalProd') {
   module.exports.devtool = 'source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -151,7 +165,7 @@ if (process.env.NODE_ENV === 'prod') {
       favicon: './assets/images/favicon.ico',
       minify: { collapseWhitespace: true },
       cache: true,
-      template: './index.jade',
+      template: './index_prod.jade',
       xhtml: true
     }),
     new ExtractTextPlugin({
